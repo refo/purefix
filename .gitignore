@@ -2,3 +2,8 @@
 .env.*.php
 .env.php
 .env
+
+*.lock
+
+
+src/vendor/*

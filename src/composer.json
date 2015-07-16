@@ -1,0 +1,6 @@
+{
+    "minimum-stability": "stable",
+    "require": {
+        "laravel/framework" : "~5.0"
+    }
+}

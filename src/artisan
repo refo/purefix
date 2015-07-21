@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+
+$loader = require __DIR__.'/vendor/autoload.php';
+
+$loader->addPsr4('App\\', __DIR__.'/laravel-master/app');
+
+$app = require __DIR__.'/laravel-master/bootstrap/app.php';
+
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+
+$status = $kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
+
+/*
+|--------------------------------------------------------------------------
+| Shutdown The Application
+|--------------------------------------------------------------------------
+|
+| Once Artisan has finished running. We will fire off the shutdown events
+| so that any final work may be done by the application before we shut
+| down the process. This is the last thing to happen to the request.
+|
+*/
+
+$kernel->terminate($input, $status);
+
+exit($status);

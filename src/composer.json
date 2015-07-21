@@ -1,6 +1,7 @@
 {
     "minimum-stability": "stable",
     "require": {
-        "laravel/framework" : "~5.0"
+        "laravel/framework" : "~5.0",
+        "voodoophp/handlebars" : "~2.0"
     }
 }

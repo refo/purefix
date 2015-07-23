@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('test', function(){
     return '<h1>Test</h1>';
 });
+
+Route::controller('page', 'PageController');

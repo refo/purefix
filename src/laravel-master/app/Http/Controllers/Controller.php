@@ -6,6 +6,8 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
+use Request;
+
 use Handlebars\Handlebars;
 use Handlebars\Loader\FilesystemLoader as HandlebarsLoader;
 
@@ -48,6 +50,10 @@ abstract class Controller extends BaseController
             'meta' => $this->meta,
             'data' => $data,
         ];
+        
+        if (Request::wantsJson()) {
+            return response()->json($data);
+        }
 
         $view = $this->hb->render($view, $data);
 

@@ -14,6 +14,7 @@ class CreateProductVariantsTable extends Migration
     {
         Schema::create('product_variants', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('product_id');
             $table->timestamps();
         });
     }

@@ -9,3 +9,5 @@ Route::get('test', function(){
 });
 
 Route::controller('page', 'PageController');
+
+Route::controller('test', 'TestController');

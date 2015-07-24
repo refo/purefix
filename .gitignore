@@ -7,3 +7,5 @@
 
 
 src/vendor/*
+
+src/laravel-master/storage/database.sqlite

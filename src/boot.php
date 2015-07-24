@@ -2,9 +2,7 @@
 
 $loader = require __DIR__.'/vendor/autoload.php';
 
-$loader->addPsr4('App\\', __DIR__.'/laravel-master/app');
-
-$app = require_once __DIR__.'/laravel-master/bootstrap/app.php';
+$app = require_once __DIR__.'/laravel-master'.'/bootstrap/app.php';
 
 // Run The Application
 

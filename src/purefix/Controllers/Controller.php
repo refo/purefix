@@ -31,7 +31,7 @@ abstract class Controller extends BaseController
     {
         $this->meta['titleSuffix'] = ' - Pure Fix Türkiye';
         
-        $this->hbPath = app_path('views');
+        $this->hbPath = CUSTOMER_PATH.'/views';
 
         $hbLoader = new HandlebarsLoader($this->hbPath, ['extension'=>'html']);
         $hb = new Handlebars([

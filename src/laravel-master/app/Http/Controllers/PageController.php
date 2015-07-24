@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 class PageController extends Controller {
 
     protected $layout = 'layout/test';
@@ -10,6 +12,20 @@ class PageController extends Controller {
     {
         parent::__construct();
         $this->meta['titlePrefix'] = 'Sayfa: ';
+    }
+
+    public function getTestCart()
+    {
+
+        Cart::add([
+            'id' => 'ABC123',
+            'name' => 'Juliet',
+            'qty' => 1,
+            'price' => 329,
+            'options' => ['size' => 'Medium - 56cm']
+        ]);
+
+        return Cart::content();
     }
 
     public function getTest()

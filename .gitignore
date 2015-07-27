@@ -7,3 +7,7 @@
 
 
 src/vendor/*
+
+src/laravel-master/storage/database.sqlite
+
+src/purefix/Controllers/TestController.php

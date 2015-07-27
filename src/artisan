@@ -1,11 +1,12 @@
 #!/usr/bin/env php
 <?php
 
+// Customer constants
+define('CUSTOMER_PATH', realpath(__DIR__.'/purefix'));
+
 $loader = require __DIR__.'/vendor/autoload.php';
 
-$loader->addPsr4('App\\', __DIR__.'/laravel-master/app');
-
-$app = require __DIR__.'/laravel-master/bootstrap/app.php';
+$app = require_once __DIR__.'/laravel-master'.'/bootstrap/app.php';
 
 $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 

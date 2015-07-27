@@ -11,10 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('test', function(){
-    return '<h1>Test</h1>';
-});
+// See "routes.php" in CUSTOMER_PATH

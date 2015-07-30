@@ -1,0 +1,56 @@
+#billboard {
+    min-width: 100%;
+    overflow: hidden;
+    background: #000 url(../img/purefix-logo-bg.png) center center no-repeat;
+    min-height: 400px;
+    //max-height: 600px;
+    margin-bottom: 20px;
+    @media (max-width: @screen-sm-max) {
+        min-height: inherit;
+    }
+    @z-index: 10;
+    .slide {
+        width: 100%;
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+            z-index: @z-index;
+        }
+        .caption {
+            position: absolute;
+            z-index: @z-index + 1;
+            
+            bottom: 30px;
+            right: 100px;
+            @media (max-width: @screen-sm-max) {
+                left: 0;
+                right: 0;
+                bottom: 10px;
+                text-align: center;
+            }
+
+            text-align: right;
+            color: @gray-lighter;
+            h3 {
+                .font-weight-bold;
+                font-size: @font-size-large * 1.5;
+            }
+            h4 {
+                .font-weight-light;
+                font-size: @font-size-large;
+            }
+            .btn {
+                background: fade(#000, 40);
+                color: @gray-light;
+                padding: 10px 15px;
+                font-size: @font-size-large;
+                &:hover {
+                    background: black;
+                    color: @gray-lighter;
+                }
+            }
+        }
+    }
+}
+

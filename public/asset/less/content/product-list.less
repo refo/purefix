@@ -1,0 +1,38 @@
+.product-list {
+    h1 {
+        font-size: @font-size-large * 1.4;
+        .font-weight-bold;
+        letter-spacing: 1.7;
+        text-align: center;
+        margin: 50px 0;
+        color: black;
+    }
+    .product-image {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    .product-name {
+        .font-size-large;
+        .font-weight-light;
+        text-align: center;
+        color: @gray;
+        text-decoration: none;
+        padding: 5px 0;
+        &:hover {
+            color: @brand-primary;
+        }
+    }
+    .product-image, .product-name {
+        display: block;
+    }
+    .product {
+        margin-bottom: 40px;
+    }
+}
+
+.col-product {
+    .make-sm-column(4);
+    .make-xs-column(6)
+}

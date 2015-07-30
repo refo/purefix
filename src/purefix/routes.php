@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@getIndex');
 
 Route::get('test', function(){
     return 'TEST OK';

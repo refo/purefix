@@ -12,5 +12,11 @@ class PageController extends Controller {
     {
         parent::__construct();
     }
+
+    public function getIndex()
+    {
+        $hb = $this->hb;
+        return $hb('layout/index', []);
+    }
     
 }

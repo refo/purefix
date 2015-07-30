@@ -9,7 +9,11 @@ class ProductVariant extends Model {
     // ===================================================
     
     //protected $table      = '';
-    protected $attributes = [];
+    protected $attributes = [
+        'active' => 1,
+        'title' => '',
+        'inventory' => 0,
+    ];
     protected $fillable   = [];
     protected $appends    = [];
     

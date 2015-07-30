@@ -13,3 +13,5 @@ src/laravel-master/storage/database.sqlite
 *.codekit
 
 src/purefix/import/*
+
+*.sqlite

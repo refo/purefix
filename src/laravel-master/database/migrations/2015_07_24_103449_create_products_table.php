@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('vendor');
             $table->string('collection');
             $table->integer('price');
+            $table->integer('price_currency');
             $table->string('image')->nullable();
             $table->string('images')->nullable();
             $table->string('images_extra')->nullable();

@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>TITLE</title>
+    <title>{{meta.title}}</title>
     
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="asset/css/style.css" />
@@ -11,17 +11,12 @@
 <body>
 
 
-<!-- @import kit/utility-bar -->
-<!-- @import kit/header -->
-<!-- @import kit/billboard -->
+{{> part/utility-bar }}
+{{> part/header }}
+{{> part/billboard }}
 
 
-<!-- @import kit/content/product-list -->
-
-
-<div class="container-fluid">
-    <!-- @import kit/long-p -->
-</div>
+{{{ content }}}
 
 
 <script src="bower_components.js"></script>

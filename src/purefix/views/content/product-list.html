@@ -1,0 +1,30 @@
+<div class="product-list container-fluid">
+    <div class="row">
+
+        <h1>{{title}}</h1>
+
+        {{#each list}}
+        
+            <article class="product col-product">
+                <a href="product/{{slug}}" class="product-image">
+                    <img src="images/{{image}}" alt="" />
+                </a>
+                <a href="product/{{slug}}" class="product-name">
+                    {{title}}
+                </a>
+            </article>
+        {{/each }}
+
+        {{#if more}}
+            {{#with more}}
+                <div class="col-xs-12">
+                    <div class="row">
+                        <a href="{{url}}" class="col-sm-4 btn-centered btn-primary">{{title}}</a>
+                    </div>
+                </div>
+            {{/with }}
+        {{/if }}
+
+
+    </div>
+</div>

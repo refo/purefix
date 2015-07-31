@@ -5,7 +5,7 @@ Route::get('/', [
 ]);
 
 Route::get('iletisim', [
-    'as' => 'contact', 'uses' => 'PageController@acontact'
+    'as' => 'contact', 'uses' => 'PageController@contact'
 ]);
 
 Route::get('bisikletler', [

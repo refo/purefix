@@ -14,7 +14,18 @@ class ProductController extends Controller {
 
     public function all()
     {
-        return Product::with('variants')->get();
+        $products = Product::all();
+        $products->map(function($item){
+            $item->url = route('product', $item->slug);
+            return $item;
+        });
+
+        $view = hbs('content/product-list', [
+            'title' => 'Bisikletler',
+            'list'  => $products->toArray(),
+        ]);
+
+        return $this->layout($view);
     }
 
     public function detail($slug)

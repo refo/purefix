@@ -12,7 +12,7 @@ abstract class Controller extends BaseController
 {
     use DispatchesJobs, ValidatesRequests;
 
-    protected $layout = '';
+    protected $layout = 'layout/default';
     protected $view   = '';
     
     protected $meta = [
@@ -22,9 +22,28 @@ abstract class Controller extends BaseController
 
     ];
 
+    public $urls = [];
+
     public function __construct()
     {
         $this->meta['titleSuffix'] = ' - Pure Fix Türkiye';
+
+        $this->urls = [
+            'home'     => route('home'),
+            'products' => route('products'),
+            'contact'  => route('contact'),
+        ];
+    }
+
+    protected function layout($content = '')
+    {
+        $layout = hbs($this->layout, [
+            'meta'    => $this->meta,
+            'url'     => $this->urls,
+            'content' => $content,
+        ]);
+
+        return $layout;
     }
 
 }

@@ -11,7 +11,7 @@ class Product extends Model {
     //protected $table      = '';
     protected $attributes = [
         'active'   => 1,
-        'category' => 0,
+        'category' => 1,
         'slug'   => null,
         'title'  => '',
         'body'   => '',
@@ -20,10 +20,12 @@ class Product extends Model {
         'price'   => 0,
         'image'   => '',
         'images'  => '',
-        'images2' => '',
-
-
+        'images_extra' => '',
+        'product_type' => '',
+        'template' => '',
+        'options' => '',
     ];
+
     protected $fillable   = [];
     protected $appends    = ['variants'];
     

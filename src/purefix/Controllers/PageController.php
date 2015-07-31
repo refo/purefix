@@ -3,7 +3,6 @@
 namespace Purefix\Controllers;
 
 use Cart;
-//use Handlebars\Handlebars;
 
 class PageController extends Controller {
 

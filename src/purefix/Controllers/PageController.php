@@ -2,11 +2,9 @@
 
 namespace Purefix\Controllers;
 
-use Cart;
+use Purefix\Models\Product;
 
 class PageController extends Controller {
-
-    protected $layout = 'layout/default';
 
     public function __construct()
     {
@@ -15,10 +13,25 @@ class PageController extends Controller {
 
     public function getIndex()
     {
-        $viewData = [
-            'partial' => 'test/partial',
-        ];
-        return hbs('test/layout', $viewData);
+        $products = Product::take(6)->get()->toArray();
+    
+        $view = hbs('content/product-list', [
+            'title' => 'Bisikletin Yalın Hali',
+            'list'  => $products,
+            'more'  => [
+                'title' => 'Hepsini Göreyim',
+                'url'   => 'products',
+            ],
+        ]);
+
+        $this->meta['title'] = 'Merhaba';
+
+        $layout = hbs('layout/default', [
+            'meta'    => $this->meta,
+            'content' => $view,
+        ]);
+
+        return $layout;
     }
     
 }

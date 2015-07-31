@@ -16,10 +16,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('active');
             $table->integer('category');
-            $table->string('slug');
+            $table->string('slug')->unique();
             // $table->string('tags');
             $table->string('title');
-            $table->string('body');
             $table->string('vendor');
             $table->string('collection');
             $table->integer('price');
@@ -27,6 +26,8 @@ class CreateProductsTable extends Migration
             $table->string('image')->nullable();
             $table->string('images')->nullable();
             $table->string('images_extra')->nullable();
+            $table->string('description')->nullable();
+            $table->string('description_extra')->nullable();
             $table->string('product_type')->nullable();
             $table->string('template')->nullable();
             $table->string('options')->nullable();

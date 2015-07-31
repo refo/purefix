@@ -18,6 +18,9 @@ class CreateProductVariantsTable extends Migration
             $table->integer('active');
             $table->string('title');
             $table->integer('inventory');
+            $table->integer('sales');
+            $table->integer('price')->nullable();
+            $table->integer('price_currency');
 
             $table->timestamps();
         });

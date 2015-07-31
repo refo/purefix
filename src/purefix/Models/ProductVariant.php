@@ -13,8 +13,11 @@ class ProductVariant extends Model {
         'active' => 1,
         'title' => '',
         'inventory' => 0,
+        'sales' => 0,
+        'price' => null,
+        'price_currency' => '',
     ];
-    protected $fillable   = [];
+    protected $fillable   = ['title'];
     protected $appends    = [];
     
     public $timestamps    = true;

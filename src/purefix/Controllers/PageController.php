@@ -11,27 +11,29 @@ class PageController extends Controller {
         parent::__construct();
     }
 
-    public function getIndex()
+    public function index()
     {
-        $products = Product::take(6)->get()->toArray();
-    
+        $products = Product::take(6)->get();
+        
+        $products->map(function($item){
+            $item->url = route('product', $item->slug);
+            return $item;
+        });
+
         $view = hbs('content/product-list', [
             'title' => 'Bisikletin Yalın Hali',
-            'list'  => $products,
+            'list'  => $products->toArray(),
             'more'  => [
                 'title' => 'Hepsini Göreyim',
-                'url'   => 'products',
+                'url'   => $this->urls['products'],
             ],
         ]);
 
+        $billboardView = hbs('part/billboard', $this->urls);
+
         $this->meta['title'] = 'Merhaba';
 
-        $layout = hbs('layout/default', [
-            'meta'    => $this->meta,
-            'content' => $view,
-        ]);
-
-        return $layout;
+        return $this->layout($billboardView . $view);
     }
     
 }

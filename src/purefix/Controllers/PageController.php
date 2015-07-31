@@ -3,10 +3,11 @@
 namespace Purefix\Controllers;
 
 use Cart;
+//use Handlebars\Handlebars;
 
 class PageController extends Controller {
 
-    protected $layout = 'layout/test';
+    protected $layout = 'layout/default';
 
     public function __construct()
     {
@@ -15,8 +16,10 @@ class PageController extends Controller {
 
     public function getIndex()
     {
-        $hb = $this->hb;
-        return $hb('layout/index', []);
+        $viewData = [
+            'partial' => 'test/partial',
+        ];
+        return hbs('test/layout', $viewData);
     }
     
 }

@@ -23,12 +23,12 @@ class CreateProductsTable extends Migration
             $table->string('vendor');
             $table->string('collection');
             $table->integer('price');
-            $table->string('image');
-            $table->string('images');
-            $table->string('images_extra');
-            // $table->string('product-type');
-            // $table->string('template');
-            // $table->string('options');
+            $table->string('image')->nullable();
+            $table->string('images')->nullable();
+            $table->string('images_extra')->nullable();
+            $table->string('product_type')->nullable();
+            $table->string('template')->nullable();
+            $table->string('options')->nullable();
 
             $table->timestamps();
         });

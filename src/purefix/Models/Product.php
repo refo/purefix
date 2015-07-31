@@ -9,6 +9,7 @@ class Product extends Model {
     // ===================================================
 
     //protected $table      = '';
+
     protected $attributes = [
         'active'   => 1,
         'category' => 1,
@@ -18,12 +19,12 @@ class Product extends Model {
         'vendor' => 'purefix',
         'collection' => '',
         'price'   => 0,
-        'image'   => '',
-        'images'  => '',
-        'images_extra' => '',
-        'product_type' => '',
-        'template' => '',
-        'options' => '',
+        'image'   => null,
+        'images'  => null,
+        'images_extra' => null,
+        'product_type' => null,
+        'template' => null,
+        'options' => null,
     ];
 
     protected $fillable   = [];

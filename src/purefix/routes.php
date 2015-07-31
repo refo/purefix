@@ -1,13 +1,23 @@
 <?php
 
-Route::get('/', 'PageController@getIndex');
+Route::get('/', [
+    'as' => 'home', 'uses' => 'PageController@index'
+]);
 
-Route::get('test', function(){
-    return 'TEST OK';
-});
+Route::get('iletisim', [
+    'as' => 'contact', 'uses' => 'PageController@acontact'
+]);
 
-Route::get('products', 'ProductController@all');
+Route::get('bisikletler', [
+    'as' => 'products', 'uses' => 'ProductController@all'
+]);
 
-Route::controller('page', 'PageController');
+Route::get('bisiklet/{slug}', [
+    'as' => 'product', 'uses' => 'ProductController@detail'
+]);
 
-Route::controller('test', 'TestController');
+
+
+//Route::controller('page', 'PageController');
+
+//Route::controller('test', 'TestController');

@@ -35,5 +35,10 @@ class PageController extends Controller {
 
         return $this->layout($billboardView . $view);
     }
+
+    public function contact()
+    {
+        return $this->layout('<h1>İletişim</h1>');
+    }
     
 }

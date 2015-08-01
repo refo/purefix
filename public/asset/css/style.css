@@ -4,7 +4,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import "../../bower_components/animate.css/animate.min.css";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6917,6 +6916,11 @@ header#main-header.shadow {
   background: black;
   color: #eeeeee;
 }
+@media (min-width: 1199px) {
+  .product-list {
+    max-width: 1199px;
+  }
+}
 .product-list h1 {
   font-size: 25.2px;
   font-weight: 500;
@@ -6965,6 +6969,9 @@ header#main-header.shadow {
 }
 body {
   background: #eeeeee;
+}
+#content {
+  background: white;
 }
 .container-fluid {
   background: white;

@@ -17,3 +17,5 @@ src/purefix/import/*
 *.sqlite
 
 src/purefix/Controllers/TestController.php
+
+src/purefix/Controllers/TestController.php

@@ -15,7 +15,7 @@ class ProductVariant extends Model {
         'inventory' => 0,
         'sales' => 0,
         'price' => null,
-        'price_currency' => '',
+        'price_currency' => null,
     ];
     protected $fillable   = ['title'];
     protected $appends    = [];

@@ -33,7 +33,7 @@ class ProductController extends Controller {
         $product = Product::with('variants')->where('slug', $slug)->first();
         $product->url = route('product', $product->slug);
 
-        $view = hbs('content/product-detail', $product);
+        $view = hbs('content/product-detail', $product->toArray());
 
         return $this->layout($view);
     }

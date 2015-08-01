@@ -23,6 +23,12 @@
             <h4>{{collection}}</h4>
             <div>{{price}} {{price_currency}}</div>
             <p>{{description}}</p>
+
+            {{#each variants}}
+            <div>
+                Boy: {{title}}  Stok: {{inventory}}
+            </div>
+            {{/each }}
         </div>
 
         <div class="col-md-12">

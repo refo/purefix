@@ -15,12 +15,12 @@ class CreateProductVariantsTable extends Migration
         Schema::create('product_variants', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id');
-            $table->integer('active');
-            $table->string('title');
-            $table->integer('inventory');
-            $table->integer('sales');
+            $table->integer('active')->default(1);
+            $table->string('title')->default('');
+            $table->integer('inventory')->default(0);
+            $table->integer('sales')->default(0);
             $table->integer('price')->nullable();
-            $table->integer('price_currency');
+            $table->integer('price_currency')->nullable();
 
             $table->timestamps();
         });

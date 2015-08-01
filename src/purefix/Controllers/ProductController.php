@@ -14,18 +14,9 @@ class ProductController extends Controller {
 
     public function all()
     {
-        $products = Product::all();
-        $products->map(function($item){
-            $item->url = route('product', $item->slug);
-            return $item;
-        });
+        $grouped = Product::getGroupedByCollection()->toArray();
 
-        $view = hbs('content/product-list', [
-            'title' => 'Bisikletler',
-            'list'  => $products->toArray(),
-        ]);
-
-        return $this->layout($view);
+        return $this->layout(hbs('content/product-list-grouped', $grouped));
     }
 
     public function detail($slug)

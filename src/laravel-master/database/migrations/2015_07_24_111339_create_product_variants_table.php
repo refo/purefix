@@ -20,7 +20,7 @@ class CreateProductVariantsTable extends Migration
             $table->integer('inventory')->default(0);
             $table->integer('sales')->default(0);
             $table->integer('price')->nullable();
-            $table->integer('price_currency')->nullable();
+            $table->string('price_currency')->nullable();
 
             $table->timestamps();
         });

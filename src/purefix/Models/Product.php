@@ -30,16 +30,17 @@ class Product extends Model {
 
     //protected $fillable   = [];
 
-    protected $guarded = ['id',''];
+    protected $guarded = ['id'];
 
-    protected $appends    = [];
+    protected $appends = ['url'];
     
-    public $timestamps    = true;
+    public $timestamps = true;
 
     // ===================================================
     // MODEL ATTRIBUTES
     // ===================================================
 
+    protected $routeName = 'product';
 
     // ===================================================
     // RELATIONSHIPS
@@ -54,9 +55,46 @@ class Product extends Model {
     // QUERY SCOPES
     // ===================================================
     
+    public function scopePublished($query)
+    {
+        $query->where('active', 1);
+    }
+
+    public function scopeOnlyListingFields($query)
+    {
+        $query->select(
+            'id',
+            'slug',
+            'title',
+            'collection',
+            'image'
+        );
+    }
+
+    public function scopeGetGroupedByCollection($query)
+    {
+        return $query
+            ->onlyListingFields()
+            ->get()
+            // Collection
+            ->groupBy('collection')
+            ->map(function($group, $title){
+                return collect([
+                    'title' => $title,
+                    'list' => $group,
+                ]);
+            });
+    }
+
+
     // ===================================================
     // ACCESSORS & MUTATORS
     // ===================================================
+
+    public function getUrlAttribute()
+    {
+        return route($this->routeName, $this->attributes['slug']);
+    }
     
     public function setImagesAttribute($value)
     {

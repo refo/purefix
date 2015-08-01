@@ -15,3 +15,5 @@ src/laravel-master/storage/database.sqlite
 src/purefix/import/*
 
 *.sqlite
+
+src/purefix/Controllers/TestController.php

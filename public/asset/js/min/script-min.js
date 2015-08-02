@@ -1,1 +1,0 @@
-!function($){Waypoint.Sticky({element:$("#main-header")[0]})}(jQuery);

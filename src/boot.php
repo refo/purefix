@@ -3,6 +3,8 @@
 // Customer constants
 define('CUSTOMER_PATH', realpath(__DIR__.'/purefix'));
 
+define('APP_VERSION', file_exists(__DIR__.'/../VERSION') ? file_get_contents(__DIR__.'/../VERSION') : '');
+
 // Composer autoloader
 $loader = require __DIR__.'/vendor/autoload.php';
 

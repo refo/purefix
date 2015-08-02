@@ -19,7 +19,7 @@ abstract class Controller extends BaseController
         'titlePrefix' => '',
         'title' => '',
         'titleSuffix' => '',
-
+        'version' => APP_VERSION,
     ];
 
     public $urls = [];

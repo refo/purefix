@@ -1,4 +1,18 @@
 (function($){
+$(function(){
+    $('.product-detail .product-images').slick({
+        arrows: true,
+        centerMode: true,
+        slidesToShow: 1,
+        dots: true
+    });
+});
+    
+})(jQuery);
+
+
+/*
+(function($){
 
     var 
         $el         = $('#main-header'),
@@ -35,3 +49,4 @@
         console.log($(this));
     });
 })(jQuery);
+*/

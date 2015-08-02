@@ -6916,9 +6916,9 @@ header#main-header.shadow {
   background: black;
   color: #eeeeee;
 }
-@media (min-width: 1199px) {
+@media (min-width: 991px) {
   .product-list {
-    max-width: 1199px;
+    max-width: 991px;
   }
 }
 .product-list h1 {

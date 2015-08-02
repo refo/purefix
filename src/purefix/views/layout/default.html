@@ -1,12 +1,14 @@
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>{{meta.title}}</title>
 
     <base href="{{url.home}}" />
     
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,500&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="asset/css/style.css" />
 
 </head>
@@ -21,9 +23,9 @@
     {{{ content }}}
 </div>
 
-{{#if meta.version}}
-    <div id="version">purefix {{meta.version}}</div>
-{{/if }}
+<div id="footer">
+    {{> part/footer }}
+</div>
 
 
 <script src="asset/js/script-min.js"></script>

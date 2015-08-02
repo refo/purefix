@@ -18,6 +18,7 @@ class Product extends Model {
         'vendor' => 'purefix',
         'collection' => '',
         'price'   => 0,
+        'price_currency' => null,
         'image'   => null,
         'images'  => null, //JSON
         'images_extra' => null, // JSON
@@ -32,7 +33,7 @@ class Product extends Model {
 
     protected $guarded = ['id'];
 
-    protected $appends = ['url'];
+    protected $appends = ['url', 'hprice'];
     
     public $timestamps = true;
 
@@ -41,6 +42,11 @@ class Product extends Model {
     // ===================================================
 
     protected $routeName = 'product';
+
+    protected $currencyFormat = [
+        'TRY' => '%d TL',
+        'USD' => '$ %d',
+    ];
 
     // ===================================================
     // RELATIONSHIPS
@@ -67,7 +73,9 @@ class Product extends Model {
             'slug',
             'title',
             'collection',
-            'image'
+            'image',
+            'price',
+            'price_currency'
         );
     }
 
@@ -90,6 +98,19 @@ class Product extends Model {
     // ===================================================
     // ACCESSORS & MUTATORS
     // ===================================================
+    
+    /**
+     * hprice - Human readable representation of the price
+     * @return String Depending on price currency and format
+     * returns a human readable price label "20 TL", "$ 20", etc.
+     */
+    public function getHpriceAttribute()
+    {
+        return sprintf(
+            array_get($this->currencyFormat, $this->attributes['price_currency'], '%d'),
+            $this->attributes['price']
+        );
+    }
 
     public function getUrlAttribute()
     {

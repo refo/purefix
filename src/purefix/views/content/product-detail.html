@@ -13,9 +13,9 @@
             <p class="product-description">{{{ description }}}</p>
 
             <h4>Ölçüler</h4>
-            <div class="btn-group" data-toggle="buttons">
+            <div class="product-options size-options btn-group" data-toggle="buttons">
             {{#each variants}}
-                <label class="btn btn-default active">
+                <label class="btn btn-default {{cssClass}}">
                     <input type="radio" name="size" id="{{id}}" autocomplete="off" checked>{{title}}
                 </label>
             {{/each }}

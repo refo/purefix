@@ -21,8 +21,9 @@ class ProductController extends Controller {
 
     public function detail($slug)
     {
-        $product = Product::with('variants')->where('slug', $slug)->first();
-        $product->url = route('product', $product->slug);
+        $product = Product::getDetail($slug);
+        // $product = Product::with('variants')->where('slug', $slug)->first();
+        // $product->url = route('product', $product->slug);
 
         $view = hbs('content/product-detail', $product->toArray());
 

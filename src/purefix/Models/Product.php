@@ -79,6 +79,37 @@ class Product extends Model {
         );
     }
 
+    // ===================================================
+    // GETTER QUERY SCOPES
+    // These are return 'processed collections'
+    // unlike query scopes should return modified queries.
+    // ===================================================
+    
+    public function scopeGetDetail($query, $slug)
+    {
+        $product = $query
+            ->with('variants')
+            ->where('slug', $slug)
+            ->first();
+
+        $product->variants->map(function($variant){
+            static $setActive = true;
+            $variant->cssClass = '';
+            
+            if ($setActive AND $variant->inventory > 0) {
+                $variant->cssClass = 'active';
+                $setActive = false;
+            }
+            if (!$variant->inventory) {
+                $variant->disabled = 'disabled';
+                $variant->cssClass .= ' disabled';
+            }
+            return $variant;
+        });
+
+        return $product;
+    }
+    
     public function scopeGetGroupedByCollection($query)
     {
         return $query
@@ -93,7 +124,6 @@ class Product extends Model {
                 ]);
             });
     }
-
 
     // ===================================================
     // ACCESSORS & MUTATORS

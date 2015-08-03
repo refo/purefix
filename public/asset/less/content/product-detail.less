@@ -1,30 +1,53 @@
 .product-detail {
-
+    
     .product-images {
+        @media (max-width: @screen-sm-max) {
+            padding: 0;
+        }
         img {
             width: 100%;
             height: auto;
         }
     }
-}
 
-.slick-arrow,
-.slick-next:focus,
-.slick-next:hover,
-.slick-prev:focus,
-.slick-prev:hover {
-    color: black;
-    background: transparent;
-}
+    .lifestyle-images {
+        padding: 0;
+        img {
+            width: 100%;
+            height: auto;
+            //width: auto;
+            //height: 280px;
+            border: black 2px solid;
+            border-left: none;
+            // @media (max-width: @screen-sm-max) {
+            //     width: auto;
+            //     height: auto;
+            // }
+        }
+    }
+    
+    .product-title {
+        margin: 40px 0;
+        .font-weight-normal;
+        text-transform: uppercase;
+        
+        .price {
+            .font-weight-light;
+            color: @brand-primary;
+            font-size: 80%;
+        }
+    }
 
-.slick-arrow {
-    color: black;
-}
+    p.product-description {
+        .font-weight-light;
+        font-size: @font-size-large * 1.5;
+    }
 
-.slick-prev {
-    left: 0;
-}
+    .product-description-x {
+        .font-weight-light;
+        font-size: @font-size-large * 1.5;
+        .text-center;
 
-.slick-next {
-    right: 0;
+    }
+
 }

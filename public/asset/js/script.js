@@ -1,13 +1,44 @@
 (function($){
 $(function(){
+
+
     $('.product-detail .product-images').slick({
         arrows: true,
-        centerMode: true,
-        slidesToShow: 1,
-        dots: true
+        dots: true,
+
+        responsive: [
+            {
+                breakpoint:768,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+
     });
-});
     
+    $('.product-detail .lifestyle-images').slick({
+        arrows: true,
+        dots: true,
+        slidesToShow: 2,
+        centerMode: true,
+        
+        responsive: [
+            {
+                breakpoint:768,
+                settings: {
+                    arrows: false,
+                    mobileFirst: true,
+                    slidesToShow: 1,
+                    centerPadding: '20px'
+                }
+            }
+        ]
+
+    });
+
+
+});    
 })(jQuery);
 
 

@@ -10,11 +10,15 @@
 
         <div class="product-info col-md-6">
             <h1 class="product-title">{{title}} - <span class="price">{{hprice}}</span></h1>
-            <p class="product-description">{{description}}</p>
-            <h4>{{collection}}</h4>
+            <p class="product-description">{{{ description }}}</p>
 
-            <div>
-                Boy: {{title}}  Stok: {{inventory}}
+            <h4>Ölçüler</h4>
+            <div class="btn-group" data-toggle="buttons">
+            {{#each variants}}
+                <label class="btn btn-default active">
+                    <input type="radio" name="size" id="{{id}}" autocomplete="off" checked>{{title}}
+                </label>
+            {{/each }}
             </div>
 
 
@@ -33,7 +37,7 @@
         {{#if description_extra }}
         <div class="product-description-x col-md-10 col-md-offset-1">
             <h2>{{title}}</h2>
-            <p>{{description_extra}}</p>
+            <p>{{{ description_extra }}}</p>
         </div>
         {{/if }}
 

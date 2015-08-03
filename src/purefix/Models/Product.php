@@ -99,6 +99,16 @@ class Product extends Model {
     // ACCESSORS & MUTATORS
     // ===================================================
     
+    public function getDescriptionAttribute($value)
+    {
+        return nl2br($value);
+    }
+
+    public function getDescriptionExtraAttribute($value)
+    {
+        return nl2br($value);
+    }
+    
     /**
      * hprice - Human readable representation of the price
      * @return String Depending on price currency and format

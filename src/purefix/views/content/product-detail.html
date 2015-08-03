@@ -1,5 +1,6 @@
 <div class="product-detail container-fluid">
-    <div class="row">
+    
+    <div class="detail row">
         
         <div class="product-images col-md-6">
             {{#each images}}
@@ -7,16 +8,26 @@
             {{/each}}
         </div>
 
-        <div class="col-md-6">
+        <div class="product-info col-md-6">
             <h1 class="product-title">{{title}} - <span class="price">{{hprice}}</span></h1>
             <p class="product-description">{{description}}</p>
             <h4>{{collection}}</h4>
 
-            {{#each variants}}
             <div>
                 Boy: {{title}}  Stok: {{inventory}}
             </div>
-            {{/each }}
+
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="lifestyle-images col-md-12">
+            {{#each images_extra}}
+                <img src="images/{{.}}" alt="" />
+            {{/each}}
         </div>
 
         {{#if description_extra }}
@@ -26,12 +37,7 @@
         </div>
         {{/if }}
 
-        <div class="lifestyle-images col-md-12">
-            {{#each images_extra}}
-                <img src="images/{{.}}" alt="" />
-            {{/each}}
-        </div>
-        
-
     </div>
+
+
 </div>

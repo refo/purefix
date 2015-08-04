@@ -12,6 +12,14 @@ class ProductController extends Controller {
         parent::__construct();
     }
 
+    public function index($collection = NULL)
+    {
+        if (is_null($collection)) {
+            return $this->all();
+        }
+        
+    }
+
     public function all()
     {
         $grouped = Product::getGroupedByCollection()->toArray();

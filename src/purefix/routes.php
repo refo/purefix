@@ -12,8 +12,8 @@ Route::get('servis-noktalari', [
     'as' => 'servisler', 'uses' => 'PageController@servisler'
 ]);
 
-Route::get('bisikletler', [
-    'as' => 'products', 'uses' => 'ProductController@all'
+Route::get('bisikletler/{collection?}', [
+    'as' => 'products', 'uses' => 'ProductController@index'
 ]);
 
 Route::get('bisiklet/{slug}', [

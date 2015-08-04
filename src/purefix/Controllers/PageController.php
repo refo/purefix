@@ -40,5 +40,14 @@ class PageController extends Controller {
     {
         return $this->layout('<h1>İletişim</h1>');
     }
+
+    public function servisler()
+    {
+        $servisler = require CUSTOMER_PATH . '/storage/' . 'servisler.php';
+        $view = hbs('content/servisler', $servisler);
+
+        return $this->layout($view);
+
+    }
     
 }

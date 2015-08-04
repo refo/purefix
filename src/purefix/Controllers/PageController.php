@@ -20,18 +20,19 @@ class PageController extends Controller {
             return $item;
         });
 
-        $view = hbs('content/product-list', [
-            'title' => 'Bisikletin Yalın Hali',
+        $data = [];
+
+        $data['popular'] = [
+            'title' => 'PORÜLER FIXI\'LER',
             'list'  => $products->toArray(),
             'more'  => [
                 'title' => 'Hepsini Göreyim',
                 'url'   => $this->urls['products'],
             ],
-        ]);
+        ];
 
-        
-        
-        
+        //$view = hbs('content/product-list', ]);
+
         
         $billboardImages = [
             [
@@ -55,14 +56,18 @@ class PageController extends Controller {
         $image = array_rand($billboardImages);
         $image = $billboardImages[$image];
 
-        $billboardView = hbs('part/billboard', [
-            'urls' => $this->urls,
+        $data['billboard'] = [
+            'url' => $this->urls['products'],
             'image' => $image, 
-        ]);
+        ];
+
+        //$billboardView = hbs('part/billboard', );
 
         $this->meta['title'] = 'Merhaba';
 
-        return $this->layout($billboardView . $view);
+        $view = hbs('content/home', $data);
+
+        return $this->layout($view);
     }
 
     public function contact()

@@ -29,7 +29,36 @@ class PageController extends Controller {
             ],
         ]);
 
-        $billboardView = hbs('part/billboard', $this->urls);
+        
+        
+        
+        
+        $billboardImages = [
+            [
+                'filename' => 'Bradley_MG_0056.jpg',
+                'style'    => 'margin-top:-25%'
+            ],
+            [
+                'filename' => 'delta-lifestyle-5_2048x2048.jpg',
+                'style'    => 'margin-top:-20%'
+            ],
+            [
+                'filename' => 'IMG_3639.jpg',
+                'style'    => 'margin-top:-20%'
+            ],
+            [
+                'filename' => 'ZULU_WEB_0005.jpg',
+                'style'    => 'margin-top:-20%'
+            ],
+        ];
+
+        $image = array_rand($billboardImages);
+        $image = $billboardImages[$image];
+
+        $billboardView = hbs('part/billboard', [
+            'urls' => $this->urls,
+            'image' => $image, 
+        ]);
 
         $this->meta['title'] = 'Merhaba';
 

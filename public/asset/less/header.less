@@ -11,9 +11,9 @@
         animation-duration: .3s;
 
         display: block;
-        padding: 20px 0;
+        padding: 16px 0;
         overflow: hidden;
-        width: 200px;
+        width: 100%;
         float: left;
         img {
             width: 100%;
@@ -58,7 +58,7 @@ ul#main-nav {
             .font-size-large;
             color: @gray-light;
             display: block;
-            padding: 25px 20px;
+            padding: 25px 30px;
             &:hover {
                 text-decoration: none;
                 color: @brand-primary;
@@ -66,6 +66,16 @@ ul#main-nav {
         }
     }
 }
+
+ul#main-nav li a {
+    @media (max-width: 1300px)     { padding: 25px 25px; }
+    @media (max-width: @screen-lg) { padding: 25px 15px; }
+    @media (max-width: 1100px)     { font-size: @font-size-large * 0.95; }
+    @media (max-width: @screen-md) {  }
+}
+
+
+
 @media (max-width: @screen-sm-max) {
     ul#main-nav {
         .hide();
@@ -87,4 +97,12 @@ header#main-header {
         -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
                 box-shadow: @shadow;
     }
+}
+
+
+.hamburger {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    float: left;
 }

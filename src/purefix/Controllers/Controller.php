@@ -29,9 +29,10 @@ abstract class Controller extends BaseController
         $this->meta['titleSuffix'] = ' - Pure Fix Türkiye';
 
         $this->urls = [
-            'home'     => route('home'),
-            'products' => route('products'),
-            'contact'  => route('contact'),
+            'home'      => route('home'),
+            'products'  => route('products'),
+            'contact'   => route('contact'),
+            'servisler' => route('servisler'),
         ];
     }
 

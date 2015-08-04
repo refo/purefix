@@ -5,6 +5,7 @@ namespace App\Support\Handlebars;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 use Handlebars\Handlebars;
+use Handlebars\Helpers;
 use Handlebars\Loader\FilesystemLoader as HandlebarsLoader;
 
 class ServiceProvider extends BaseServiceProvider
@@ -22,14 +23,23 @@ class ServiceProvider extends BaseServiceProvider
                 'extension' => $this->extension,
             ]);
             
-            return new Handlebars([
+            $hbs = new Handlebars([
                 'loader'          => $loader,
                 'partials_loader' => $loader,
+                'helpers'         => new Helpers([
+                    'vimeo' => function($template, $context, $args, $source){
+                        $id = $args;
+                        return $template->getEngine()->render('partial/vimeo', ['id' => $id]);
+                    },
+                ]),
             ]);
+
+            return $hbs;
 
         });
 
         include_once 'helper.php';
     }
+
     
 }

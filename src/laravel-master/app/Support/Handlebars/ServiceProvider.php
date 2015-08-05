@@ -28,7 +28,8 @@ class ServiceProvider extends BaseServiceProvider
                 'partials_loader' => $loader,
                 'helpers'         => new Helpers([
                     'vimeo' => function($template, $context, $args, $source){
-                        $id = $args;
+                        $id = $context->get($args);
+                        $id = $id ?: $args;
                         return $template->getEngine()->render('partial/vimeo', ['id' => $id]);
                     },
                 ]),

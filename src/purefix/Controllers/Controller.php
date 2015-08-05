@@ -17,9 +17,9 @@ abstract class Controller extends BaseController
     
     protected $meta = [
         'titlePrefix' => '',
-        'title' => '',
+        'title'       => '',
         'titleSuffix' => '',
-        'version' => APP_VERSION,
+        'version'     => APP_VERSION,
     ];
 
     public $urls = [];

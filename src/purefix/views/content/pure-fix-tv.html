@@ -1,0 +1,17 @@
+
+<div class="container-fluid">
+    <h1 class="pf-h-centered">PURE FIX TV</h1>
+    
+    <div class="row clearfix">
+        
+        {{#each . }}
+        <div class="vimeo video-col col-md-6">
+            {{#vimeo id }}
+            <h4>{{title}}</h4>
+            <p>{{description}}</p>
+        </div>
+        {{/each }}
+
+    </div>
+
+</div>

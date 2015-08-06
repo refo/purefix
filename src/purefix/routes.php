@@ -20,6 +20,10 @@ Route::get('bisiklet/{slug}', [
     'as' => 'product', 'uses' => 'ProductController@detail'
 ]);
 
+Route::get('pure-fix-tv', [
+    'as' => 'videos', 'uses' => 'PageController@videos'
+]);
+
 
 
 //Route::controller('page', 'PageController');

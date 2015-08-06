@@ -65,6 +65,10 @@ class PageController extends Controller {
 
         $this->meta['title'] = 'Merhaba';
 
+        $data['videos'] = [
+            'url' => $this->urls['videos'],
+        ];
+
         $view = hbs('content/home', $data);
 
         return $this->layout($view);
@@ -82,6 +86,16 @@ class PageController extends Controller {
 
         return $this->layout($view);
 
+    }
+
+    public function videos()
+    {
+        $vimeo = file_get_contents(CUSTOMER_PATH.'/storage/vimeo-modified.json');
+        $vimeo = json_decode($vimeo, TRUE);
+
+        $view = hbs('content/pure-fix-tv', $vimeo);
+
+        return $this->layout($view);
     }
     
 }

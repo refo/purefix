@@ -1,0 +1,27 @@
+Pure Fix - todo @created(15-08-03 22:48):
+
+Ürün verisiyle alakalı yapılacaklar:
+  ☐ "Langdon" modeli eklenecek
+  ☐ Ürünler, "Fırsat" ürünü olarak seçilebilsin
+  ☐ "X-ray" ürünü adı, "X-Ray" olarak değiştirilecek. (Büyük harf "R")
+  ☐ Tekrarlı fotolar varsa silinecek
+
+Diğer yapılacaklar:
+  ☐ Ürün kategorileri aşğıdaki sırayla listelensin.
+  Original, Glow, Premimum, Step Through, Classic 
+  ☐ Kategoriye göre ürün listeleme
+  ☐ "Glow" menüsü "Glow" kategorisini görüntüleyecek
+  ☐ Ürün ve Kategori, kendine özel template'i kullanabilsin @low
+  ☐ "Bisiklet" menüsü, Kategori listesini görüntülesin (Drop-down menü yada liste sayfası olabilir )
+  ☐ "Fırsat" sayfasında indirimli ürünler listelensin (Şu an için boş)
+  ☐ Ürün detayı sayfasında, "Satın Al" butonu, "n11.com" ürün sayfasına link olsun
+  "n11.com" ürün sayfasında, ürün varyasyonları için farklı link var ise, "Satın Al" butonu linki, dinamik alarak bu linkler olsun.
+ ☐ Ürün detayı sayfalarında, "size chart" görüntülensin
+ ☐ Ürün detayı sayfalarında, ürün videoları görüntülensin
+ ☐ Sözleşme sabit sayfaları ve linkleri eklenecek
+ ☐ Anasayfaya videolar eklensin
+ ☐ Mobil hamburger menü
+
+  Ürün kategosi yönetimi için hazırlık yap:
+    ☐ Category hasMany / belongsTo Category
+    ☐ Product belongsTo Category

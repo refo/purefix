@@ -112,7 +112,7 @@ class Product extends Model {
     
     public function scopeGetGroupedByCollection($query)
     {
-        return $query
+        $grouped = $query
             ->onlyListingFields()
             ->get()
             // Collection
@@ -123,6 +123,27 @@ class Product extends Model {
                     'list' => $group,
                 ]);
             });
+
+        // Array with group keys and empty values
+        // to fill from unsorted array fetched
+        // 
+        // TODO: (this a temporary solution obviously)
+        // Create a Category model with hasMany relationship with itself or
+        // both a Category (for general purposes) and Collection model (solely for grouping products)
+        
+        $arr = [
+            'PUREFIX-ORIGINAL'     => NULL,
+            'PUREFIX-GLOW'         => NULL,
+            'PUREFIX-PREMIUM'      => NULL,
+            'PURECITY-STEPTHROUGH' => NULL,
+            'PURECITY-CLASSIC'     => NULL,
+        ];
+
+        foreach($arr as $k => $v) {
+            $arr[$k] = $grouped[$k];
+        }
+
+        return collect($arr);
     }
 
     public function scopeGetByCollection($query, $collection)

@@ -10,7 +10,7 @@ Diğer yapılacaklar:
   ✔ Ürün kategorileri aşağıdaki sırayla listelensin: @started(15-08-09 15:52) @done (15-08-09 16:24) @lasted(0:32)
   Original, Glow, Premimum, Step Through, Classic 
   ✔ Kategoriye göre ürün listeleme @done (15-08-09 15:38)
-  ☐ "Glow" menüsü "Glow" kategorisini görüntüleyecek
+  ✔ "Glow" menüsü "Glow" kategorisini görüntüleyecek @started(15-08-09 16:34) @done (15-08-09 16:42) @lasted(0:08)
   ☐ Ürün ve Kategori, kendine özel template'i kullanabilsin @low
   ☐ "Bisiklet" menüsü, Kategori listesini görüntülesin (Drop-down menü yada liste sayfası olabilir )
   ☐ "Fırsat" sayfasında indirimli ürünler listelensin (Şu an için boş)

@@ -125,6 +125,31 @@ class Product extends Model {
             });
     }
 
+    public function scopeGetByCollection($query, $collection)
+    {
+        // Lazyless at its best
+        // TODO: this whole method is copy-pasted "list all products by collection"
+        // method modified.
+        // collections or categories for grouping matter, should be a model itself
+        // and be in a "one to many" relation with products.
+        // 
+
+        $grouped = $query
+            ->onlyListingFields()
+            ->get()
+            // Collection
+            ->groupBy('collection')
+            ->map(function($group, $title){
+                return collect([
+                    'title' => $title,
+                    'list' => $group,
+                ]);
+            });
+
+            $collection = strtoupper($collection);
+            return $grouped[$collection];
+    }
+
     // ===================================================
     // ACCESSORS & MUTATORS
     // ===================================================

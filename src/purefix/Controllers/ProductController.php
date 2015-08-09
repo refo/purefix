@@ -17,7 +17,9 @@ class ProductController extends Controller {
         if (is_null($collection)) {
             return $this->all();
         }
-        
+
+        $products = Product::getByCollection($collection)->toArray();
+        return $this->layout(hbs('content/product-list-grouped', [$products]));
     }
 
     public function all()

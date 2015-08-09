@@ -35,6 +35,7 @@ abstract class Controller extends BaseController
             'servisler' => route('servisler'),
             'videos'    => route('videos'),
             'glow'      => route('products', 'purefix-glow'),
+            'sale'      => route('sale'),
         ];
     }
 

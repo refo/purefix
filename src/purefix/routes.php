@@ -24,6 +24,10 @@ Route::get('pure-fix-tv', [
     'as' => 'videos', 'uses' => 'PageController@videos'
 ]);
 
+Route::get('firsat', [
+    'as' => 'sale', 'uses' => 'ProductController@sale'
+]);
+
 
 
 //Route::controller('page', 'PageController');

@@ -40,6 +40,12 @@ class ProductController extends Controller {
         return $this->layout($view);
     }
 
+    public function sale()
+    {
+        $view = hbs('content/firsat.html');
+        return $this->layout($view);
+    }
+
 
 }
 

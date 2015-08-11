@@ -29,6 +29,12 @@ Route::get('firsat', [
 ]);
 
 
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){
+
+    Route::resource('product', 'ProductAdmin');
+
+});
+
 
 //Route::controller('page', 'PageController');
 

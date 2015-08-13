@@ -17,7 +17,7 @@ class ProductVariant extends Model {
         'price' => null,
         'price_currency' => null,
     ];
-    protected $fillable   = ['title'];
+    protected $fillable   = ['title', 'url_n11'];
     protected $appends    = [];
     
     public $timestamps    = true;
@@ -29,7 +29,7 @@ class ProductVariant extends Model {
 
     public function product()
     {
-        return $this->belongsTo('Product');
+        return $this->belongsTo('Purefix\Models\Product');
     }
 
 }

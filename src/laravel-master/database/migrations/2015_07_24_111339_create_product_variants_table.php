@@ -21,6 +21,7 @@ class CreateProductVariantsTable extends Migration
             $table->integer('sales')->default(0);
             $table->integer('price')->nullable();
             $table->string('price_currency')->nullable();
+            $table->string('url_n11')->nullable();
 
             $table->timestamps();
         });

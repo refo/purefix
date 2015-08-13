@@ -54,8 +54,7 @@ class ProductVariantsAdmin extends BaseController
      */
     public function show($product_id, $id)
     {
-        return ProductVariant::where('product_id', $product_id)->findOrFail($id);
-        //return Product::with('variants')->findOrFail($product_id)->variants->where('id', $id)->first();
+        return ProductVariant::with('product')->where('product_id', $product_id)->findOrFail($id);
     }
 
     /**
@@ -78,9 +77,12 @@ class ProductVariantsAdmin extends BaseController
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $product_id, $id)
     {
-        //
+        $variant = ProductVariant::where('product_id', $product_id)->findOrFail($id);
+        $variant->update($request->input());
+
+        return $variant;
     }
 
     /**

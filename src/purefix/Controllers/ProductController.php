@@ -46,6 +46,11 @@ class ProductController extends Controller {
         return $this->layout($view);
     }
 
+    public function search($keyword)
+    {
+        return Product::with('variants')->where('title', 'like', '%'.$keyword.'%')->get();
+    }
+
 
 }
 

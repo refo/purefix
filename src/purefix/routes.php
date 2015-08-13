@@ -36,6 +36,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){
 
 });
 
+Route::get('search/{keyword}', 'ProductController@search');
+
 
 //Route::controller('page', 'PageController');
 

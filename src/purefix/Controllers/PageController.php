@@ -76,7 +76,8 @@ class PageController extends Controller {
 
     public function contact()
     {
-        return $this->layout('<h1>İletişim</h1>');
+        $view = hbs('content/iletisim');
+        return $this->layout($view);
     }
 
     public function servisler()

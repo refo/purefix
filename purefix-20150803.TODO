@@ -14,7 +14,7 @@ Diğer yapılacaklar:
   ☐ Ürün ve Kategori, kendine özel template'i kullanabilsin @low
   ☐ "Bisiklet" menüsü, Kategori listesini görüntülesin (Drop-down menü yada liste sayfası olabilir )
   ✔ "Fırsat" sayfasında indirimli ürünler listelensin (Şu an için boş) @done (15-08-10 09:23)
-  ☐ Ürün detayı sayfasında, "Satın Al" butonu, "n11.com" ürün sayfasına link olsun
+  ✔ Ürün detayı sayfasında, "Satın Al" butonu, "n11.com" ürün sayfasına link olsun @done (15-08-22 20:42)
   "n11.com" ürün sayfasında, ürün varyasyonları için farklı link var ise, "Satın Al" butonu linki, dinamik alarak bu linkler olsun.
  ☐ Ürün detayı sayfalarında, "size chart" görüntülensin
  ☐ Ürün detayı sayfalarında, ürün videoları görüntülensin

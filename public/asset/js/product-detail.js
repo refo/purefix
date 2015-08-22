@@ -10,7 +10,6 @@ $(function(){
 
     n11Urls.attr('target', '_blank');
 
-
     var radioChanged = function() {
         radioValue = variants.filter(':checked').val();
         $(activeUrl).addClass('hidden');

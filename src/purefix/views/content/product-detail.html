@@ -15,13 +15,22 @@
             <h4>Ölçüler</h4>
             <div class="product-options size-options btn-group" data-toggle="buttons">
             {{#each variants}}
-                <label class="btn btn-default {{cssClass}}">
-                    <input type="radio" name="size" id="{{id}}" autocomplete="off" checked>{{title}}
+                <label class="btn btn-default">
+                    <input type="radio" name="size" value="{{id}}" id="variant-{{id}}" data-id="{{id}}" autocomplete="off"/>
+                    {{title}}
                 </label>
             {{/each }}
             </div>
 
+        </div>
 
+        <div class="product-buy col-md-6">
+            {{#each variants}}
+                {{#if url_n11 }}
+                <a role="button" id="url-{{id}}" class="n11-buy btn-lg btn-primary hidden" rel="external" href="{{url_n11}}">n11.com'dan Satın Al</a>
+                {{/if }}
+
+            {{/each }}
         </div>
 
     </div>

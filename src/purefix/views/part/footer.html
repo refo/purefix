@@ -1,14 +1,35 @@
 <div class="container-fluid">
     
-    <div class="col-md-6"></div>
-    <div class="col-md-6"></div>
+    <div class="row">
+
+        <div class="col-md-8 page-links">
+            <a href="{{url.products}}">BİSİKLET</a>
+            <a data-toggle="tooltip" title="PEK YAKINDA" data-placement="bottom" href="#">YEDEK PARÇA</a>
+            <a data-toggle="tooltip" title="PEK YAKINDA" data-placement="bottom" href="#">AKSESUAR</a>
+            <a href="{{url.glow}}">GLOW SERİSİ</a>
+            <a data-toggle="tooltip" title="PEK YAKINDA" data-placement="bottom" href="#">TRACK SERİSİ</a>
+            <a href="{{url.sale}}">FIRSAT</a>
+        </div>
+
+        <div class="col-md-4">
+            <!-- social links -->
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            {{#if meta.version}}
+                <div id="version">purefix {{meta.version}}</div>
+            {{/if }}        
+        </div>
+
+        <div class="col-md-6">
+            &nbsp;
+        </div>
+        
+    </div>
     
-    <div class="col-md-6">
-        {{#if meta.version}}
-            <div id="version">purefix {{meta.version}}</div>
-        {{/if }}        
-    </div>
-    <div class="col-md-6">
-    </div>
 
 </div>

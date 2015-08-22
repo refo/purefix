@@ -58,3 +58,9 @@ h1 {
     margin-bottom: 50px;
     &:hover { color: white; }
 }
+
+.max-width {
+    @media (min-width: @screen-sm-max) {
+        max-width: @screen-sm-max;
+    }
+}

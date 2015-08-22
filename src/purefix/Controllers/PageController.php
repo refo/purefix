@@ -23,7 +23,7 @@ class PageController extends Controller {
         $data = [];
 
         $data['popular'] = [
-            'title' => 'PORÜLER FIXI\'LER',
+            'title' => 'POPÜLER BİSİKLETLER',
             'list'  => $products->toArray(),
             'more'  => [
                 'title' => 'Hepsini Göreyim',

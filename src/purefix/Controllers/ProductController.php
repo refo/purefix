@@ -37,10 +37,9 @@ class ProductController extends Controller {
         
         // Burası, model içinde olmalı
         // 
-        $vendor = str_replace(' ', '', $product->vendor);
-        $product->$vendor = TRUE;
-
-        $collection = str_replace('-', '', $product->collection);
+        list($brand, $collection) = explode('-', strtolower($product->collection), 2);
+        
+        $product->$brand      = TRUE;
         $product->$collection = TRUE;
 
         $view = hbs('content/product-detail', $product->toArray());

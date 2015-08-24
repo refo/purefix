@@ -50,7 +50,56 @@
         </div>
         {{/if }}
 
-        {{> part/product/size }}
+        {{#if premium }}
+        <div class="product-description-x col-md-10 col-md-offset-1">
+            <h2>Permium</h2>
+            <p>
+                Sürüş keyfini bir üst seviyeye taşıyacak ‘double-butted 4130 chromoly’ kadrosu ile daha hafif, daha sağlam ve daha hızlı mükemmel bir bisiklet, Pure Fix Cycles Premium Serisinde seni bekliyor. Deri sargılı Dropbar gidonu,700C 30mm. fren yüzeyleri işlenmiş jantları, rulmanlı göbekleri ve Thickslick 700X28c lastikleri standart donanımda geliyor. Parlak krom renk eğimli maşası ve klasik gidon boynu sayesinde oluşan vintage tasarımı kalbini ısıtacak.
+            </p>
+        </div>
+        {{/if }}
+
+        {{#if stepthrough }}
+        <div class="product-description-x col-md-10 col-md-offset-1">
+            <h2>Step Through</h2>
+            <p>
+                Hiç bulutların üzerinde süzüldüğünü hayal ettin mi? Bir kafeden, bir marketten ya da günün seni sürüklediği yerden evine bisikletinle dönerken havadaki tazeliği ve saçlarında dolaşan günışığını hissettin mi? Peki hiç bisikletiyle Hollanda sokaklarında gezinen bir genç kızın bulaşıcı gülümsemesine şahit oldun mu? Bunlar şimdiye kadar ki en konforlu bisikletimizi oluştururken esinlendiklerimiz. Yaylı selesi, ‘Step Through’ kadrosu, dik geometrisi, geriye eğimli gidonu ile bu bisiklet rahat ve eğlenceli bir sürüş için tasarlandı. Unutma, yaşadığın şehrin hoşuna gitmesi, sen kendini iyi hissettikçe mümkün…   
+            </p>
+        </div>
+        {{/if }}
+
+        {{#if classic }}
+        <div class="product-description-x col-md-10 col-md-offset-1">
+            <h2>Classic</h2>
+            <p>
+            Klasiklere bayılıyoruz. İnce boruları, ‘double-triangle’ kadrosu ve eskimeyen çizgileriyle o bir ‘velespit’. Hassas ve dengeli maşası, klasik gidon boynu, vegan deri elcikleri ile zamanda yolculuk yapan bir klasiğe, modern teknolojisi ile sahip olun.
+            </p>
+        </div>
+        {{/if }}
+
+        {{#if purefix }}
+        <div class="product-description-x col-md-10 col-md-offset-1">
+            <h2>SABİT DİŞLİ Mİ SERBEST DİŞLİ Mİ?</h2>
+            <div class="row">
+
+                <div class="col-sm-5">
+                    <img src="asset/img/purefix-hub2.jpg" class="img-responsive" alt="">
+                </div>
+
+                <div class="col-sm-7">
+                    <p>
+                        Pure Fix Cycles modellerinde sizler için ister sabit dişli (fixed gear ya da fixie), isterse serbest dişli (Freewheel) kullanıma izin veren dönüşümlü arka göbek seçtik. Sabit dişli sürüş, hem bisikletinizle hem de yolla eşsiz bir bağ kurmanızı sağlar ve mükemmel bir pedal hissi verir. Serbest dişli sürüş ise tıpkı tek rubleli çocukluk bisikletiniz gibi süzülerek gezinmenize olanak tanır. Hangi sürüşü seçerseniz seçin, standart donanımda yer alan ön freniniz her iki şekilde de durmanızı garanti ediyor.
+                    </p>                    
+                </div>
+
+            </div>
+        </div>
+        {{/if }}
+
+        {{#unless stepthrough }}
+            {{> part/product/size }}
+        {{/unless }}
+
 
         <div class="product-description-x col-md-10 col-md-offset-1">
             <h2>Güven Veren Garanti</h2>

@@ -89,6 +89,15 @@ class PageController extends Controller {
 
     }
 
+    public function satis()
+    {
+        $satis = require CUSTOMER_PATH . '/storage/' . 'satis.php';
+        $view = hbs('content/satis', $satis);
+
+        return $this->layout($view);
+
+    }
+
     public function videos()
     {
         $vimeo = file_get_contents(CUSTOMER_PATH.'/storage/vimeo-modified.json');

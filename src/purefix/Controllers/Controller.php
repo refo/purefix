@@ -33,6 +33,7 @@ abstract class Controller extends BaseController
             'products'  => route('products'),
             'contact'   => route('contact'),
             'servisler' => route('servisler'),
+            'satis'     => route('satis'),
             'videos'    => route('videos'),
             'glow'      => route('products', 'purefix-glow'),
             'sale'      => route('sale'),

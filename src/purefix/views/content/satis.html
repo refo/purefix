@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="col-md-12">
+        
+        <h1>Satış Noktaları</h1>
+        
+        <div class="table-responsive">
+            
+            <table class="table">
+                <thead>
+                    <th>Şehir</th>
+                    <th>Firma</th>
+                    <th>Adres</th>
+                    <th>Telefon</th>
+                    <th>E-mail</th>
+                </thead>
+                <tbody>
+                    {{#each .}}
+                    <tr>
+                        <td>{{city}}</td>
+                        <td>{{company}}</td>
+                        <td>{{address}}</td>
+                        <td>{{phone}}</td>
+                        <td>{{email}}</td>
+                    </tr>
+                    {{/each }}
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>

@@ -12,6 +12,10 @@ Route::get('servis-noktalari', [
     'as' => 'servisler', 'uses' => 'PageController@servisler'
 ]);
 
+Route::get('satis-noktalari', [
+    'as' => 'satis', 'uses' => 'PageController@satis'
+]);
+
 Route::get('bisikletler/{collection?}', [
     'as' => 'products', 'uses' => 'ProductController@index'
 ]);

@@ -34,6 +34,14 @@ class ProductController extends Controller {
         $product = Product::getDetail($slug);
         // $product = Product::with('variants')->where('slug', $slug)->first();
         // $product->url = route('product', $product->slug);
+        
+        // Burası, model içinde olmalı
+        // 
+        $vendor = str_replace(' ', '', $product->vendor);
+        $product->$vendor = TRUE;
+
+        $collection = str_replace('-', '', $product->collection);
+        $product->$collection = TRUE;
 
         $view = hbs('content/product-detail', $product->toArray());
 

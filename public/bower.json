@@ -15,6 +15,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "slick-carousel": "~1.5.8"
+    "slick-carousel": "~1.5.8",
+    "zoom.js": "~0.0.1"
   }
 }

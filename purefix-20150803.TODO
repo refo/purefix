@@ -25,3 +25,12 @@ Diğer yapılacaklar:
   Ürün kategosi yönetimi için hazırlık yap:
     ☐ Category hasMany / belongsTo Category
     ☐ Product belongsTo Category
+  
+  Eklenecek n11 linkleri:
+    ☐ http://urun.n11.com/sehir-bisikleti/pure-fix-cycles-bravo-large-58cm-P71638627
+    ☐ http://urun.n11.com/sehir-bisikleti/pure-fix-cycles-delta-xsmall-47cm-P73487079
+    ☐ http://urun.n11.com/sehir-bisikleti/pure-fix-cycles-x-ray-xsmall-47cm-P73488374
+    ☐ http://urun.n11.com/sehir-bisikleti/pure-fix-cycles-hotel-medium-54cm-P73489486
+    ☐ http://urun.n11.com/sehir-bisikleti/pure-fix-cycles-hotel-large-58cm-P73489979
+    ☐ http://urun.n11.com/sehir-bisikleti/pure-city-cycles-newbury-one-size-45cm-single-speed-P73492964
+    

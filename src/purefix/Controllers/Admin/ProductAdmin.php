@@ -97,4 +97,35 @@ class ProductAdmin extends BaseController
     {
         //
     }
+
+    public function debug()
+    {
+        //
+    }
+
+    private function debug_remove_nonexistent_images()
+    {
+        $products = Product::all();
+
+        $products->each(function($p){
+
+            $images = $p->images;
+            $path = 'images/';
+
+            foreach($images as $idx => $image) {
+                if ( !file_exists($path.$image) ) {
+                    $images[$idx] = 'xx XX xx';
+                    unset($images[$idx]);
+                }                
+            }
+
+            // Reset array keys
+            $images = array_values($images);
+
+            $p->images = $images;
+            $p->save();
+        });
+
+        return $products;
+    }
 }

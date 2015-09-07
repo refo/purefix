@@ -4,6 +4,7 @@ namespace Purefix\Controllers\Admin;
 
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
+use Redirect;
 
 use Purefix\Models\Product;
 use Purefix\Models\ProductVariant;
@@ -57,7 +58,12 @@ class ProductAdmin extends BaseController
         if ($id > 0) {
             return $product->findOrFail($id);
         } else {
-            return $product->where('slug', $id)->firstOrFail();
+            $product = $product->where('slug', 'like', '%'.$id.'%')->firstOrFail();
+            if ($product->slug != $id) {
+                return Redirect::route('admin.product.show', ['id' => $product->slug]);
+            } else {
+                return $product;
+            }
         }
     }
 
@@ -83,7 +89,9 @@ class ProductAdmin extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->update($request->input());
+        return $product;
     }
 
     /**
